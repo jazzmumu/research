@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>陶牧群 MuChun Tao｜研究小桌</title>
+<meta name="description" content="陶牧群（MuChun Tao）的學術網頁。研究領域：台灣教會史與教會增長、公共神學、宗教社會學、社會心理學、量化與質性研究方法。">
+<meta name="author" content="陶牧群 MuChun Tao">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="陶牧群 MuChun Tao｜研究小桌">
+<meta property="og:description" content="台灣教會發展、公共神學與宗教社會學研究">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+<style>
+:root{
+  --bg:#fdfdfc; --fg:#1a1a1a; --muted:#6b6b6b; --line:#e4e2dd;
+  --accent:#8a6d3b; --accent-soft:#f3efe6; --card:#ffffff;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Songti TC","Noto Serif TC",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+  --maxw:820px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#16161a;--fg:#e8e6e1;--muted:#9c9a95;--line:#2e2e34;
+        --accent:#c9a961;--accent-soft:#23231f;--card:#1c1c21;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);
+  font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased;letter-spacing:.01em}
+
+/* ---------- language switching ---------- */
+.en{display:none}
+body[data-lang="en"] .zh{display:none}
+body[data-lang="en"] .en{display:revert}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;align-items:center;
+  gap:4px;height:56px;overflow-x:auto;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+nav a{color:var(--muted);text-decoration:none;font-size:14px;padding:6px 10px;border-radius:6px;white-space:nowrap}
+nav a:hover{color:var(--fg);background:var(--accent-soft)}
+#langbtn{margin-left:auto;flex:none;border:1px solid var(--line);background:transparent;color:var(--muted);
+  font:inherit;font-size:13px;padding:5px 12px;border-radius:99px;cursor:pointer;font-family:var(--sans)}
+#langbtn:hover{color:var(--fg);border-color:var(--accent)}
+
+/* ---------- layout ---------- */
+main{max-width:var(--maxw);margin:0 auto;padding:0 24px 96px}
+header.hero{display:flex;gap:32px;align-items:center;padding:64px 0 40px;flex-wrap:wrap}
+.portrait{width:132px;height:132px;border-radius:50%;object-fit:cover;flex:none;
+  border:1px solid var(--line);background:var(--accent-soft)}
+.portrait-fallback{width:132px;height:132px;border-radius:50%;flex:none;background:var(--accent-soft);
+  display:grid;place-items:center;font-family:var(--serif);font-size:44px;color:var(--accent);border:1px solid var(--line)}
+.hero-text{flex:1;min-width:260px}
+h1{font-family:var(--serif);font-size:34px;line-height:1.25;margin:0 0 4px;font-weight:600;letter-spacing:0}
+.latin-name{font-family:var(--serif);font-size:19px;color:var(--muted);margin:0 0 14px;font-style:italic}
+.affil{margin:0;color:var(--muted);font-size:15px;line-height:1.65}
+.contact{margin-top:14px;font-size:14.5px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.contact a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+.contact a:hover{border-bottom-color:var(--accent)}
+.dot{color:var(--line)}
+
+section{padding-top:44px;border-top:1px solid var(--line);margin-top:44px}
+section:first-of-type{border-top:none;margin-top:0}
+h2{font-family:var(--serif);font-size:21px;font-weight:600;margin:0 0 18px;letter-spacing:0}
+h2::before{content:"";display:inline-block;width:18px;height:1.5px;background:var(--accent);
+  vertical-align:middle;margin-right:10px}
+p{margin:0 0 14px}
+a{color:var(--accent)}
+
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{background:var(--accent-soft);color:var(--fg);padding:5px 13px;border-radius:99px;font-size:14px}
+
+/* ---------- collapsible ---------- */
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:14px 2px;font-weight:600;font-size:16px;
+  display:flex;align-items:center;gap:10px;user-select:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"›";color:var(--accent);font-size:20px;line-height:1;
+  transition:transform .18s ease;display:inline-block;width:12px}
+details[open]>summary::before{transform:rotate(90deg)}
+summary .count{margin-left:auto;color:var(--muted);font-size:13px;font-weight:400}
+.body{padding:2px 0 20px 22px}
+
+ol.pubs{margin:0;padding-left:20px}
+ol.pubs>li{margin-bottom:14px;line-height:1.7}
+ol.pubs>li::marker{color:var(--muted);font-size:14px}
+.pub-title{font-weight:600}
+.venue{color:var(--muted)}
+.dl{font-size:13.5px;white-space:nowrap}
+
+ul.plain{list-style:none;margin:0;padding:0}
+ul.plain>li{padding:11px 0;border-bottom:1px dashed var(--line);display:flex;gap:14px;align-items:baseline}
+ul.plain>li:last-child{border-bottom:none}
+.date{flex:none;width:88px;color:var(--muted);font-size:13.5px;font-variant-numeric:tabular-nums}
+.item-main{flex:1;min-width:0}
+.outlet{display:inline-block;font-size:12.5px;color:var(--accent);background:var(--accent-soft);
+  padding:1px 8px;border-radius:4px;margin-right:8px;vertical-align:1px}
+.kw{font-size:12.5px;color:var(--muted)}
+
+ul.cv{list-style:none;margin:0;padding:0}
+ul.cv>li{padding:9px 0;border-bottom:1px dashed var(--line);display:flex;gap:14px;align-items:baseline}
+ul.cv>li:last-child{border-bottom:none}
+.yr{flex:none;width:120px;color:var(--muted);font-size:13.5px;font-variant-numeric:tabular-nums}
+
+footer{max-width:var(--maxw);margin:0 auto;padding:28px 24px 56px;border-top:1px solid var(--line);
+  color:var(--muted);font-size:13.5px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  header.hero{padding:40px 0 28px;gap:22px}
+  h1{font-size:28px}
+  .date,.yr{width:100%}
+  ul.plain>li,ul.cv>li{flex-direction:column;gap:3px}
+  .body{padding-left:6px}
+}
+@media print{
+  nav,footer,#langbtn{display:none}
+  body{font-size:11pt;background:#fff;color:#000}
+  details{border:none}
+  details>.body{display:block!important}
+  summary::before{display:none}
+  a{color:#000;text-decoration:none}
+  section{page-break-inside:avoid}
+}
+</style>
+</head>
+<body data-lang="zh">
+
+<nav>
+  <div class="nav-inner">
+    <a href="#about"><span class="zh">簡介</span><span class="en">About</span></a>
+    <a href="#research"><span class="zh">研究領域</span><span class="en">Research</span></a>
+    <a href="#publications"><span class="zh">著作發表</span><span class="en">Publications</span></a>
+    <a href="#media"><span class="zh">媒體</span><span class="en">Media</span></a>
+    <a href="#teaching"><span class="zh">教學</span><span class="en">Teaching</span></a>
+    <a href="#cv"><span class="zh">經歷學歷</span><span class="en">CV</span></a>
+    <button id="langbtn" type="button" aria-label="Switch language">English</button>
+  </div>
+</nav>
+
+<main>
+
+<header class="hero">
+  <img class="portrait" src="assets/profile.jpg" alt="陶牧群 MuChun Tao"
+       onerror="this.outerHTML='&lt;div class=\'portrait-fallback\'&gt;陶&lt;/div&gt;'">
+  <div class="hero-text">
+    <h1>陶牧群</h1>
+    <p class="latin-name">MuChun Tao</p>
+    <p class="affil zh">
+      教會發展中心主任｜社團法人中華基督教福音協進會<br>
+      神學碩士班在讀，中華福音神學院｜心理學碩士，輔仁大學
+    </p>
+    <p class="affil en">
+      Director, Church Development Center, Chinese Christian Evangelical Association (CCEA)<br>
+      Th.M. candidate, China Evangelical Seminary｜M.A. in Psychology, Fu Jen Catholic University
+    </p>
+    <div class="contact">
+      <a href="mailto:jazzmumu@gmail.com">jazzmumu@gmail.com</a>
+      <!-- 要加 Facebook／Google Scholar／ORCID，複製下面兩行取消註解並填網址：
+      <span class="dot">·</span>
+      <a href="https://www.facebook.com/你的帳號">Facebook</a>
+      -->
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <h2><span class="zh">簡介</span><span class="en">About</span></h2>
+  <p class="zh">我的研究核心關注於台灣教會在快速社會變遷中的發展與挑戰，特別是如何在宗教市場與公共議題中持續見證信仰。方法上，試著結合統計分析、歷史分析、宗教社會學與神學詮釋，以跨學科的視角梳理教會與社會互動的模式。應用領域涵蓋教會發展、公共神學與神學教育，期盼能為本地教會提供具體的洞見與實踐資源。</p>
+  <p class="en">My research centers on the development and challenges facing churches in Taiwan amid rapid social change — particularly how Christian communities sustain their public witness within a competitive religious marketplace and contested public sphere. Methodologically, I combine statistical analysis, historical analysis, the sociology of religion, and theological interpretation to trace patterns of church–society interaction from an interdisciplinary vantage point. My applied work spans church development, public theology, and theological education, with the aim of offering concrete insight and practical resources to local congregations.</p>
+</section>
+
+<section id="research">
+  <h2><span class="zh">研究領域</span><span class="en">Research Areas</span></h2>
+  <ul class="tags zh">
+    <li>台灣教會史</li><li>教會增長與趨勢</li><li>公共神學</li>
+    <li>宗教社會學</li><li>社會心理學</li><li>量化與質性研究方法</li>
+  </ul>
+  <ul class="tags en">
+    <li>History of Christianity in Taiwan</li><li>Church growth &amp; trends</li><li>Public theology</li>
+    <li>Sociology of religion</li><li>Social psychology</li><li>Quantitative &amp; qualitative methods</li>
+  </ul>
+</section>
+
+<section id="publications">
+  <h2><span class="zh">著作發表</span><span class="en">Publications</span></h2>
+
+  <details open>
+    <summary><span class="zh">期刊論文</span><span class="en">Journal Articles</span><span class="count">1</span></summary>
+    <div class="body">
+      <ol class="pubs">
+        <li>
+          <span class="zh">陶牧群（2016）。<span class="pub-title">書評：《國族神學的民主化》台灣與中國大陸</span>。<span class="venue">華神期刊，(8)，144–155。</span></span>
+          <span class="en">Tao, M.-C. (2016). <span class="pub-title">Book review: The democratization of national theology — Taiwan and mainland China</span>. <span class="venue">CES Journal, (8), 144–155.</span></span>
+        </li>
+      </ol>
+    </div>
+  </details>
+
+  <details open>
+    <summary><span class="zh">會議論文</span><span class="en">Conference Papers</span><span class="count">7</span></summary>
+    <div class="body">
+      <ol class="pubs">
+        <li>
+          <span class="zh">陶牧群（2026）。<span class="pub-title">台灣基督徒離堂經驗的多層次歷程模型——以 Podcast《我為什麼不在教會》為基礎的敘事與結構分析</span>。<span class="venue">發表於「2026 政大宗教研究生論壇」。</span></span>
+          <span class="en">Tao, M.-C. (2026). <span class="pub-title">A multilevel process model of church-leaving among Taiwanese Christians: Narrative and structural analysis based on the podcast <em>Why I'm Not in Church</em></span>. <span class="venue">Paper presented at the 2026 NCCU Graduate Forum in Religious Studies.</span></span>
+        </li>
+        <li>
+          <span class="zh">陶牧群（2025）。<span class="pub-title">取消文化時代的教會增長再思：從 McGavran 的同質群體原則來看 2024 年台灣教勢報告</span>。<span class="venue">發表於「第八屆華人基督教之本土與全球發展」學術研討會。</span></span>
+          <span class="en">Tao, M.-C. (2025). <span class="pub-title">Rethinking church growth in the age of cancel culture: Reading the 2024 Taiwan Church Survey through McGavran's homogeneous unit principle</span>. <span class="venue">Paper presented at the 8th Conference on the Local and Global Development of Chinese Christianity.</span></span>
+        </li>
+        <li>
+          <span class="zh">陶牧群（2024）。<span class="pub-title">牧師，你有事嗎？生態系統觀點對牧者關顧初探</span>。<span class="venue">發表於「教牧關顧圓桌論壇」（論壇報告，未出版）。</span> <a class="dl" href="https://drive.google.com/file/d/1pewu2zHj8A0Drkp__8rGM_c2KVVqX1QG/view?usp=share_link">投影片 ↗</a></span>
+          <span class="en">Tao, M.-C. (2024). <span class="pub-title">Pastor, are you okay? An ecological-systems approach to pastoral care</span>. <span class="venue">Presented at the Pastoral Care Roundtable (unpublished).</span> <a class="dl" href="https://drive.google.com/file/d/1pewu2zHj8A0Drkp__8rGM_c2KVVqX1QG/view?usp=share_link">Slides ↗</a></span>
+        </li>
+        <li>
+          <span class="zh">陶牧群（2016）。<span class="pub-title">台灣宗教公益處境</span>。<span class="venue">發表於「2016 宗教與可持續發展國際論壇暨第二屆兩岸宗教公益論壇」（論壇報告，未出版）。</span> <a class="dl" href="https://drive.google.com/file/d/1PVMOMlroLj8n7xZuB_EXpJ9wJvbJq4eu/view?usp=share_link">PDF ↗</a></span>
+          <span class="en">Tao, M.-C. (2016). <span class="pub-title">The landscape of religious philanthropy in Taiwan</span>. <span class="venue">Presented at the 2016 International Forum on Religion and Sustainable Development / 2nd Cross-Strait Forum on Religious Philanthropy (unpublished).</span> <a class="dl" href="https://drive.google.com/file/d/1PVMOMlroLj8n7xZuB_EXpJ9wJvbJq4eu/view?usp=share_link">PDF ↗</a></span>
+        </li>
+        <li>
+          <span class="zh">魏悌香、陶牧群（2015）。<span class="pub-title">中國化靈修的理論與實踐</span>。<span class="venue">發表於「基督教中國化之路」國際學術研討會，北京：中國社會科學院世界宗教研究所等主辦。</span> <a class="dl" href="https://drive.google.com/file/d/1Tf1H6RIHT3D--qaoaw9hNQanLHBXzoP2/view?usp=share_link">PDF ↗</a></span>
+          <span class="en">Wei, T.-H., &amp; Tao, M.-C. (2015). <span class="pub-title">Theory and practice of Sinicized spirituality</span>. <span class="venue">Presented at the international conference "The Path of Sinicizing Christianity," Beijing: Institute of World Religions, CASS, et al.</span> <a class="dl" href="https://drive.google.com/file/d/1Tf1H6RIHT3D--qaoaw9hNQanLHBXzoP2/view?usp=share_link">PDF ↗</a></span>
+        </li>
+        <li>
+          <span class="zh">陶牧群（2015）。<span class="pub-title">行善不看景氣：經濟環境與台灣基督教公益活動的關係</span>。<span class="venue">發表於「兩岸宗教公益論壇」，南京：愛德基金會主辦。</span> <a class="dl" href="https://drive.google.com/file/d/1_EnBaCznVs8CSXSDLAxFGsU0R4N60Xrx/view?usp=share_link">PDF ↗</a></span>
+          <span class="en">Tao, M.-C. (2015). <span class="pub-title">Charity regardless of the economy: Economic conditions and Protestant philanthropy in Taiwan</span>. <span class="venue">Presented at the Cross-Strait Forum on Religious Philanthropy, Nanjing: Amity Foundation.</span> <a class="dl" href="https://drive.google.com/file/d/1_EnBaCznVs8CSXSDLAxFGsU0R4N60Xrx/view?usp=share_link">PDF ↗</a></span>
+        </li>
+        <li>
+          <span class="zh">陶牧群（2015）。<span class="pub-title">台灣神學教育的變遷：以《中華福音神學院》課程史來看</span>。<span class="venue">臺灣宗教學會 2015 年會論文集。臺灣宗教學會主辦。</span> <a class="dl" href="https://drive.google.com/drive/u/0/folders/1ZYmLC039PGIEcVE_lwgEWCoN2XeB7zR_">PDF ↗</a></span>
+          <span class="en">Tao, M.-C. (2015). <span class="pub-title">Change in Taiwanese theological education: A curricular history of China Evangelical Seminary</span>. <span class="venue">In Proceedings of the 2015 Annual Meeting of the Taiwan Association for Religious Studies.</span> <a class="dl" href="https://drive.google.com/drive/u/0/folders/1ZYmLC039PGIEcVE_lwgEWCoN2XeB7zR_">PDF ↗</a></span>
+        </li>
+      </ol>
+    </div>
+  </details>
+
+  <details open>
+    <summary><span class="zh">研究報告</span><span class="en">Research Reports</span><span class="count">5</span></summary>
+    <div class="body">
+      <ol class="pubs">
+        <li>
+          <span class="zh">中華基督教福音協進會（2026）。<span class="pub-title">2024 台灣基督教會普查報告</span>〔研究報告〕。 <a class="dl" href="https://ccea.tw/24chreport">連結 ↗</a></span>
+          <span class="en">CCEA (2026). <span class="pub-title">2024 Taiwan Church Census Report</span> [Research report]. <a class="dl" href="https://ccea.tw/24chreport">Link ↗</a></span>
+        </li>
+        <li>
+          <span class="zh">中華基督教福音協進會（2022）。<span class="pub-title">2022 台灣基督教會普查報告</span>〔研究報告〕。 <a class="dl" href="https://trends.ccea.org.tw/article/2022%E5%8F%B0%E7%81%A3%E6%95%99%E6%9C%83%E6%99%AE%E6%9F%A5%E5%A0%B1%E5%91%8A%E9%9B%BB%E5%AD%90%E7%89%8820230531.pdf">PDF ↗</a></span>
+          <span class="en">CCEA (2022). <span class="pub-title">2022 Taiwan Church Census Report</span> [Research report]. <a class="dl" href="https://trends.ccea.org.tw/article/2022%E5%8F%B0%E7%81%A3%E6%95%99%E6%9C%83%E6%99%AE%E6%9F%A5%E5%A0%B1%E5%91%8A%E9%9B%BB%E5%AD%90%E7%89%8820230531.pdf">PDF ↗</a></span>
+        </li>
+        <li>
+          <span class="zh">夏昊霝、陶牧群（2022）。<span class="pub-title">教牧生活事奉調查：台灣牧者睡得好嗎？</span>〔研究報告〕。中華基督教福音協進會。 <a class="dl" href="https://trends.ccea.org.tw/article/%E5%8F%B0%E7%81%A3%E7%89%A7%E8%80%85%E7%9D%A1%E5%BE%97%E5%A5%BD%E5%97%8E%EF%BC%9F%E6%95%99%E7%89%A7%E7%94%9F%E6%B4%BB%E4%BA%8B%E5%A5%89%E8%AA%BF%E6%9F%A5%E7%9D%A1%E7%9C%A0%E7%AF%87.pdf">PDF ↗</a></span>
+          <span class="en">Hsia, H.-L., &amp; Tao, M.-C. (2022). <span class="pub-title">Pastoral life and ministry survey: Are Taiwan's pastors sleeping well?</span> [Research report]. CCEA. <a class="dl" href="https://trends.ccea.org.tw/article/%E5%8F%B0%E7%81%A3%E7%89%A7%E8%80%85%E7%9D%A1%E5%BE%97%E5%A5%BD%E5%97%8E%EF%BC%9F%E6%95%99%E7%89%A7%E7%94%9F%E6%B4%BB%E4%BA%8B%E5%A5%89%E8%AA%BF%E6%9F%A5%E7%9D%A1%E7%9C%A0%E7%AF%87.pdf">PDF ↗</a></span>
+        </li>
+        <li>
+          <span class="zh">夏昊霝、陶牧群（2021）。<span class="pub-title">2021「新冠肺炎疫情與台灣基督教機構」網路調查</span>〔研究報告〕。中華基督教福音協進會。 <a class="dl" href="https://trends.ccea.org.tw/article/2021%E3%80%8C%E6%96%B0%E5%86%A0%E8%82%BA%E7%82%8E%E7%96%AB%E6%83%85%E8%88%87%E5%8F%B0%E7%81%A3%E5%9F%BA%E7%9D%A3%E6%95%99%E6%A9%9F%E6%A7%8B%E3%80%8D%E7%B6%B2%E8%B7%AF%E8%AA%BF%E6%9F%A5.pdf">PDF ↗</a></span>
+          <span class="en">Hsia, H.-L., &amp; Tao, M.-C. (2021). <span class="pub-title">2021 online survey: COVID-19 and Christian organizations in Taiwan</span> [Research report]. CCEA. <a class="dl" href="https://trends.ccea.org.tw/article/2021%E3%80%8C%E6%96%B0%E5%86%A0%E8%82%BA%E7%82%8E%E7%96%AB%E6%83%85%E8%88%87%E5%8F%B0%E7%81%A3%E5%9F%BA%E7%9D%A3%E6%95%99%E6%A9%9F%E6%A7%8B%E3%80%8D%E7%B6%B2%E8%B7%AF%E8%AA%BF%E6%9F%A5.pdf">PDF ↗</a></span>
+        </li>
+        <li>
+          <span class="zh">夏昊霝、陶牧群（2021）。<span class="pub-title">2021「新冠肺炎疫情與台灣教會」網路調查</span>〔研究報告〕。中華基督教福音協進會。 <a class="dl" href="https://trends.ccea.org.tw/article/2021%E3%80%8C%E6%96%B0%E5%86%A0%E8%82%BA%E7%82%8E%E7%96%AB%E6%83%85%E8%88%87%E5%8F%B0%E7%81%A3%E6%95%99%E6%9C%83%E3%80%8D%E7%B6%B2%E8%B7%AF%E8%AA%BF%E6%9F%A5_%E5%9C%96%E8%A1%A8%E7%89%88.pdf">PDF ↗</a></span>
+          <span class="en">Hsia, H.-L., &amp; Tao, M.-C. (2021). <span class="pub-title">2021 online survey: COVID-19 and churches in Taiwan</span> [Research report]. CCEA. <a class="dl" href="https://trends.ccea.org.tw/article/2021%E3%80%8C%E6%96%B0%E5%86%A0%E8%82%BA%E7%82%8E%E7%96%AB%E6%83%85%E8%88%87%E5%8F%B0%E7%81%A3%E6%95%99%E6%9C%83%E3%80%8D%E7%B6%B2%E8%B7%AF%E8%AA%BF%E6%9F%A5_%E5%9C%96%E8%A1%A8%E7%89%88.pdf">PDF ↗</a></span>
+        </li>
+      </ol>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="zh">非學術性刊物文章</span><span class="en">Writing for General Readers</span><span class="count">22</span></summary>
+    <div class="body">
+      <p class="en" style="color:var(--muted);font-size:14px">Published in Chinese. Titles are given in the original.</p>
+      <ul class="plain">
+        <li><span class="date">2025/09</span><div class="item-main"><span class="outlet">宇宙光雜誌</span>「下個世代的服事者」究竟是什麼樣貌呢？<div class="kw">教會趨勢 · 世代差異 · 教會同工</div></div></li>
+        <li><span class="date">2025/09</span><div class="item-main"><span class="outlet">航向月刊</span>【牧者安心計畫】我的牧師 患了抑鬱症<div class="kw">牧者安心</div></div></li>
+        <li><span class="date">2025/05</span><div class="item-main"><span class="outlet">航向月刊</span>【國度觀察鏡】2024 台灣教會教勢報告<div class="kw">教會趨勢</div></div></li>
+        <li><span class="date">2025/03</span><div class="item-main"><span class="outlet">航向月刊</span>【牧者安心計畫】不完美的牧者 才有指望<div class="kw">牧者安心</div></div></li>
+        <li><span class="date">2024/07</span><div class="item-main"><span class="outlet">航向月刊</span>【牧者安心計劃】牧師，你有事嗎？<div class="kw">牧者安心</div></div></li>
+        <li><span class="date">2024/06</span><div class="item-main"><span class="outlet">航向月刊</span>【國度觀察鏡】520 之後<div class="kw">社會議題</div></div></li>
+        <li><span class="date">2024/01</span><div class="item-main"><span class="outlet">航向月刊</span>【牧者安心計劃】當牧師精神崩潰了<div class="kw">牧者安心</div></div></li>
+        <li><span class="date">2023/12</span><div class="item-main"><span class="outlet">航向月刊</span>【教會觀察家】為了神國度拒絕性騷擾；為了神榮耀不害怕舉報<div class="kw">社會議題</div></div></li>
+        <li><span class="date">2023/11</span><div class="item-main"><span class="outlet">航向月刊</span>【教會觀察家】丹伶的 GLS 故事<div class="kw">領袖高峰會 · 社區外展</div></div></li>
+        <li><span class="date">2023/10</span><div class="item-main"><span class="outlet">航向月刊</span>【教會觀察家】後疫情時代的大學生牧養<div class="kw">教會趨勢 · 青少年事工</div></div></li>
+        <li><span class="date">2023/09</span><div class="item-main"><span class="outlet">航向月刊</span>【教會觀察家】5 家吾家 海口教會<div class="kw">微教會</div></div></li>
+        <li><span class="date">2023/09</span><div class="item-main"><span class="outlet">航向月刊</span>【翻轉吧教會】翻轉聖餐桌來經歷神<div class="kw">神學反思</div></div></li>
+        <li><span class="date">2023/08</span><div class="item-main"><span class="outlet">航向月刊</span>【教會觀察家】異軍突起的兒童事工<div class="kw">兒童事工</div></div></li>
+        <li><span class="date">2023/07</span><div class="item-main"><span class="outlet">航向月刊</span>【教會觀察家】1 + 1 &gt; 2 寧法但以理專班<div class="kw">微教會 · 職場宣教</div></div></li>
+        <li><span class="date">2023/06</span><div class="item-main"><span class="outlet">航向月刊</span>【教會觀察家】愛與被愛的小鎮——玉里暖心輕旅行<div class="kw">為台灣禱告</div></div></li>
+        <li><span class="date">2023/05</span><div class="item-main"><span class="outlet">航向月刊</span>【教會觀察家】教會聚會人數衰退的現在，正是開發新模式的時候！<div class="kw">教會趨勢</div></div></li>
+        <li><span class="date">2023/04</span><div class="item-main"><span class="outlet">航向月刊</span>【教會觀察家】搶手的幼兒共學團<div class="kw">兒童事工</div></div></li>
+        <li><span class="date">2023/03</span><div class="item-main"><span class="outlet">航向月刊</span>【教會觀察家】牧師，我可以躺平嗎？<div class="kw">社會議題</div></div></li>
+        <li><span class="date">2023/01</span><div class="item-main"><span class="outlet">航向月刊</span>【教會觀察家】iM 職場新突破——教會的領袖高峰會<div class="kw">職場宣教 · 領袖高峰會</div></div></li>
+        <li><span class="date">2022/11</span><div class="item-main"><span class="outlet">航向月刊</span>在《教勢報告》中經歷神<div class="kw">教會趨勢</div></div></li>
+        <li><span class="date">2022/09</span><div class="item-main"><span class="outlet">航向月刊</span>為台灣 368 鄉鎮禱告<div class="kw">為台灣禱告</div></div></li>
+        <li><span class="date">2018/07</span><div class="item-main"><span class="outlet">航向月刊</span>「寧法 2.0」新革命——從個人、團隊到門徒訓練<div class="kw">微教會</div></div></li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<section id="media">
+  <h2><span class="zh">媒體</span><span class="en">Media</span></h2>
+
+  <details>
+    <summary><span class="zh">媒體專訪（文字）</span><span class="en">Press Interviews</span><span class="count">14</span></summary>
+    <div class="body">
+      <ul class="plain">
+        <li><span class="date">2025/09/03</span><div class="item-main"><span class="outlet">基督教論壇報</span>從「我是誰？」到「我被呼召去做什麼？」清楚呼召為主剛強壯膽前行<div class="kw">呼召</div></div></li>
+        <li><span class="date">2025/06/25</span><div class="item-main"><span class="outlet">基督教論壇報</span>傳道人退休潮來臨，Z 世代接棒有多難？陶牧群牧師呼籲重建一條能一起走的橋<div class="kw">傳承</div></div></li>
+        <li><span class="date">2025/06/14</span><div class="item-main"><span class="outlet">基督教論壇報</span>主日兒童增長 青少年卻流失！教會要贏得下一代 關鍵是對話與栽培成全<div class="kw">青少年事工 · 教會趨勢</div></div></li>
+        <li><span class="date">2025/05/31</span><div class="item-main"><span class="outlet">基督教論壇報</span>AI「隨時都在」是當代教會極大挑戰 如何帶領人回歸真實的信仰與陪伴？<div class="kw">牧養</div></div></li>
+        <li><span class="date">2025/05/23</span><div class="item-main"><span class="outlet">基督教今日報</span>孤兒基督徒、教會媽寶越來越多⋯⋯？我們該如何用新角度思考「青少年事工」<div class="kw">青少年事工</div></div></li>
+        <li><span class="date">2025/03/19</span><div class="item-main"><span class="outlet">基督教論壇報</span>爭競敵對是出於人的罪性 效法耶穌捨己服事作多人贖價成祝福</div></li>
+        <li><span class="date">2024/06/13</span><div class="item-main"><span class="outlet">教會公報</span>救救枯竭牧者 專家把脈開良方<div class="kw">牧者安心</div></div></li>
+        <li><span class="date">2024/01/10</span><div class="item-main"><span class="outlet">基督教今日報</span>你政治冷感嗎？神對基督徒關注政治的心意是什麼？<div class="kw">社會議題</div></div></li>
+        <li><span class="date">2023/12/29</span><div class="item-main"><span class="outlet">基督教論壇報</span>新北校園喋血恐引發替代性創傷 兒盟建議家長三心照顧孩子情緒 牧者鼓勵親子彼此祝禱<div class="kw">社會議題</div></div></li>
+        <li><span class="date">2023/09/13</span><div class="item-main"><span class="outlet">基督教論壇報</span>陪伴受苦者學習等候神修建屬靈根基</div></li>
+        <li><span class="date">2023/09/13</span><div class="item-main"><span class="outlet">基督教論壇報</span>建造屬靈不動搖的根基 活出見證帶出影響力</div></li>
+        <li><span class="date">2023/07/29</span><div class="item-main"><span class="outlet">基督教今日報</span>解析政府數據》台灣宗教場所比超商多，但教會減少？3 縣市教會量勝出<div class="kw">教會趨勢</div></div></li>
+        <li><span class="date">2023/07/26</span><div class="item-main"><span class="outlet">基督教論壇報</span>孤獨是一種連結的喪失 教會該怎麼成為鄰舍需要者的幫助？</div></li>
+        <li><span class="date">2022/08/02</span><div class="item-main"><span class="outlet">基督教論壇報</span>是機會還是試探？數千台人赴柬工作受騙 遭軟禁與暴力對待 教會如何幫助年輕人避免誘惑<div class="kw">社會議題</div></div></li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="zh">Podcast 專訪</span><span class="en">Podcast Appearances</span><span class="count">6</span></summary>
+    <div class="body">
+      <p style="color:var(--muted);font-size:14px;margin-bottom:10px">
+        <span class="zh">《不在教會的日子》「教會未來式」系列</span>
+        <span class="en">Series "The Future of the Church" on the podcast <em>Out of Church</em></span>
+      </p>
+      <ul class="plain">
+        <li><span class="date">2025/09/12</span><div class="item-main"><a href="https://outofchurch2021.wixsite.com/website/podcast/episode/24682c63/06-ft">［教會未來式 06］教會版圖的劇烈改變 ↗</a></div></li>
+        <li><span class="date">2025/09/05</span><div class="item-main"><a href="https://outofchurch2021.wixsite.com/website/podcast/episode/23a53e64/05-ft">［教會未來式 05］基督徒會回教會嗎？ ↗</a></div></li>
+        <li><span class="date">2025/08/29</span><div class="item-main"><a href="https://outofchurch2021.wixsite.com/website/podcast/episode/f9dcc731/04-ft">［教會未來式 04］令人震驚的教會新數據！ ↗</a></div></li>
+        <li><span class="date">2025/08/22</span><div class="item-main"><a href="https://outofchurch2021.wixsite.com/website/podcast/episode/2a3acd27/03">［教會未來式 03］教會等一下會發生什麼事？ ↗</a></div></li>
+        <li><span class="date">2025/08/15</span><div class="item-main"><a href="https://outofchurch2021.wixsite.com/website/podcast/episode/d4413724/02">［教會未來式 02］教會為什麼一直在變？ ↗</a></div></li>
+        <li><span class="date">2025/08/08</span><div class="item-main"><a href="https://outofchurch2021.wixsite.com/website/podcast/episode/20bc12e1/01-ft">［教會未來式 01］教會不只有一種樣子 ↗</a></div></li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<section id="teaching">
+  <h2><span class="zh">教學</span><span class="en">Teaching</span></h2>
+  <ul class="plain">
+    <li><span class="date">113-2</span><div class="item-main">
+      <span class="zh">摩西五經｜台北基督學院 <a class="dl" href="https://drive.google.com/file/d/1833a9UBsSA6Ev478mwvDXyjaJ7GPGpaM/view?usp=share_link">課程大綱 ↗</a></span>
+      <span class="en">The Pentateuch｜Christ's College Taipei <a class="dl" href="https://drive.google.com/file/d/1833a9UBsSA6Ev478mwvDXyjaJ7GPGpaM/view?usp=share_link">Syllabus ↗</a></span>
+    </div></li>
+    <li><span class="date">113-1</span><div class="item-main">
+      <span class="zh">基督教信仰簡介｜台北基督學院 <a class="dl" href="https://drive.google.com/file/d/1ApAIi6iyorKc3QDV8ICXyrLlIYtkU4B3/view?usp=share_link">課程大綱 ↗</a></span>
+      <span class="en">Introduction to the Christian Faith｜Christ's College Taipei <a class="dl" href="https://drive.google.com/file/d/1ApAIi6iyorKc3QDV8ICXyrLlIYtkU4B3/view?usp=share_link">Syllabus ↗</a></span>
+    </div></li>
+    <li><span class="date">—</span><div class="item-main">
+      <span class="zh">台灣領袖高峰會 促進員</span>
+      <span class="en">Facilitator, Global Leadership Summit Taiwan</span>
+    </div></li>
+  </ul>
+</section>
+
+<section id="cv">
+  <h2><span class="zh">經歷與學歷</span><span class="en">Experience &amp; Education</span></h2>
+
+  <details open>
+    <summary><span class="zh">經歷</span><span class="en">Professional Experience</span></summary>
+    <div class="body">
+      <ul class="cv">
+        <li><span class="yr">2025.1 –</span><div class="item-main">
+          <span class="zh">秘書長｜社團法人中華基督教微教會聯會</span>
+          <span class="en">Secretary General, Taiwan Micro-Church Alliance</span></div></li>
+        <li><span class="yr">2024.9 –</span><div class="item-main">
+          <span class="zh">兼任講師｜台北基督書院</span>
+          <span class="en">Adjunct Lecturer, Christ's College Taipei</span></div></li>
+        <li><span class="yr">2021.6 –</span><div class="item-main">
+          <span class="zh">教會發展中心主任｜社團法人中華基督教福音協進會</span>
+          <span class="en">Director, Church Development Center, CCEA</span></div></li>
+        <li><span class="yr">2021.6 –</span><div class="item-main">
+          <span class="zh">創新拓展部副部長｜財團法人標竿教育基金會</span>
+          <span class="en">Deputy Director of Innovation &amp; Outreach, Purpose Driven Education Foundation</span></div></li>
+        <li><span class="yr">2021.6 –</span><div class="item-main">
+          <span class="zh">學務長｜寧法神學院</span>
+          <span class="en">Dean of Student Affairs, Ninfa Seminary</span></div></li>
+        <li><span class="yr">2011.9 – 2016.12</span><div class="item-main">
+          <span class="zh">傳道｜台北市基督教標竿教會</span>
+          <span class="en">Pastor, Purpose Driven Church, Taipei</span></div></li>
+        <li><span class="yr">2009.2 – 2009.7</span><div class="item-main">
+          <span class="zh">研究助理｜台灣師範大學餐旅管理研究所</span>
+          <span class="en">Research Assistant, Graduate Institute of Hospitality Management, NTNU</span></div></li>
+      </ul>
+    </div>
+  </details>
+
+  <details open>
+    <summary><span class="zh">學歷</span><span class="en">Education</span></summary>
+    <div class="body">
+      <ul class="cv">
+        <li><span class="yr">2025.9 –</span><div class="item-main">
+          <span class="zh">神學碩士（主修實踐神學）｜中華福音神學院</span>
+          <span class="en">Th.M. in Practical Theology (in progress), China Evangelical Seminary</span></div></li>
+        <li><span class="yr">2013.9 – 2019.6</span><div class="item-main">
+          <span class="zh">社會學博士班｜東海大學</span>
+          <span class="en">Ph.D. program in Sociology, Tunghai University</span></div></li>
+        <li><span class="yr">2010.9 – 2013.6</span><div class="item-main">
+          <span class="zh">道學碩士｜中華福音神學院</span>
+          <span class="en">M.Div., China Evangelical Seminary</span></div></li>
+        <li><span class="yr">2004.9 – 2008.6</span><div class="item-main">
+          <span class="zh">心理學碩士（主修社會與人格心理學）｜輔仁大學</span>
+          <span class="en">M.A. in Psychology (Social &amp; Personality), Fu Jen Catholic University</span></div></li>
+        <li><span class="yr">1999.9 – 2004.1</span><div class="item-main">
+          <span class="zh">心理學系學士｜輔仁大學</span>
+          <span class="en">B.A. in Psychology, Fu Jen Catholic University</span></div></li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+</main>
+
+<footer>
+  <span>© <span id="yr">2026</span> 陶牧群 MuChun Tao</span>
+  <span class="zh">最後更新：2026 年 7 月</span>
+  <span class="en">Last updated: July 2026</span>
+</footer>
+
+<script>
+(function(){
+  var body=document.body, btn=document.getElementById('langbtn');
+  var saved=null;
+  try{saved=localStorage.getItem('lang')}catch(e){}
+  var lang=saved||((navigator.language||'').toLowerCase().indexOf('zh')===0?'zh':'zh');
+  set(lang);
+  btn.addEventListener('click',function(){ set(body.dataset.lang==='zh'?'en':'zh') });
+  function set(l){
+    body.dataset.lang=l;
+    document.documentElement.lang = (l==='zh'?'zh-Hant':'en');
+    btn.textContent = (l==='zh'?'English':'中文');
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
